@@ -46,7 +46,7 @@ export const StartButton = styled.button`
   }
 `;
 
-export const Side = styled.div<Path>`
+export const PathContainer = styled.div<Path>`
   display: flex;
   flex: 1;
   flex-direction: column;

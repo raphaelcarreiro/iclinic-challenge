@@ -4,7 +4,7 @@ import {
   WelcomeTitle,
   Content,
   StartButton,
-  Side,
+  PathContainer,
   Avatar,
   ButtonBack,
   ButtonTopChoose,
@@ -53,7 +53,7 @@ const Home: React.FC = () => {
   return (
     <>
       {data ? (
-        <Side path={path}>
+        <PathContainer path={path}>
           <ButtonBack onClick={() => setData(null)}>
             <MdArrowBack size={36} /> back
           </ButtonBack>
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
           >
             choose your path again, Padawan
           </ButtonBottomChoose>
-        </Side>
+        </PathContainer>
       ) : (
         <Container>
           <Content>
