@@ -78,7 +78,7 @@ export const Side = styled.div<Path>`
 export const Avatar = styled.img`
   width: 380px;
   height: 380px;
-  background-color: #eee;
+  background-color: #c4c4c4;
 
   border-radius: 50%;
   margin: 91px 0 40px;
@@ -97,6 +97,7 @@ export const ButtonBack = styled.button`
   left: 35px;
   display: flex;
   align-items: center;
+  font-size: 18px;
 
   & svg {
     margin-right: 10px;
@@ -110,6 +111,7 @@ export const ButtonBottomChoose = styled.button<Path>`
   font-size: 16px;
   margin-top: 35px;
   display: none;
+  color: inherit;
 
   ${(props) =>
     props.path === "dark"
@@ -119,7 +121,7 @@ export const ButtonBottomChoose = styled.button<Path>`
         `
       : css`
           background-color: #2a2a2a;
-          color: #fff;
+          color: #fbfe63;
         `}
 
   @media (max-width: 800px) {
@@ -142,7 +144,7 @@ export const ButtonTopChoose = styled.button<Path>`
         `
       : css`
           background-color: #2a2a2a;
-          color: #fff;
+          color: #fbfe63;
         `}
 
   @media (max-width: 800px) {

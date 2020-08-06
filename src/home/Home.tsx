@@ -78,7 +78,7 @@ const Home: React.FC = () => {
             <WelcomeTitle>
               Welcome to <strong>iClinic</strong>
             </WelcomeTitle>
-            <p>FRONTEND CHALLENGE</p>
+            <p style={{ letterSpacing: "0.3em" }}>FRONTEND CHALLENGE</p>
           </Content>
           <StartButton disabled={loading} onClick={handleStart}>
             S T A R T
