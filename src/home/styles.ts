@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { darken } from "polished";
 
 interface Path {
   path: string | null;
@@ -38,18 +39,31 @@ export const StartButton = styled.button`
   color: #fff;
   font-size: 18px;
   font-weight: 800;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: ${darken(0.1, "#2c97d1")};
+  }
 `;
 
 export const Side = styled.div<Path>`
   display: flex;
   flex: 1;
-  background-color: ${(props) =>
-    props.path === "dark" ? "#2a2a2a" : "#FBFE63"};
-  color: ${(props) => (props.path === "dark" ? "#fff" : "#2a2a2a")};
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 30px;
+
+  ${(props) =>
+    props.path === "dark"
+      ? css`
+          background-color: #2a2a2a;
+          color: #fff;
+        `
+      : css`
+          background-color: #fbfe63;
+          color: #2a2a2a;
+        `}
 
   & p {
     font-size: 48px;
@@ -90,8 +104,6 @@ export const ButtonBack = styled.button`
 `;
 
 export const ButtonBottomChoose = styled.button<Path>`
-  background-color: ${(props) => (props.path === "dark" ? "#fff" : "#2a2a2a")};
-  color: ${(props) => (props.path === "dark" ? "#2a2a2a" : "#fff")};
   width: 347px;
   height: 56px;
   font-weight: bold;
@@ -99,19 +111,39 @@ export const ButtonBottomChoose = styled.button<Path>`
   margin-top: 35px;
   display: none;
 
+  ${(props) =>
+    props.path === "dark"
+      ? css`
+          background-color: #fff;
+          color: #2a2a2a;
+        `
+      : css`
+          background-color: #2a2a2a;
+          color: #fff;
+        `}
+
   @media (max-width: 800px) {
     display: block;
   }
 `;
 
 export const ButtonTopChoose = styled.button<Path>`
-  background-color: ${(props) => (props.path === "dark" ? "#fff" : "#2a2a2a")};
-  color: ${(props) => (props.path === "dark" ? "#2a2a2a" : "#fff")};
   width: 347px;
   height: 56px;
   font-weight: bold;
   font-size: 16px;
   display: block;
+
+  ${(props) =>
+    props.path === "dark"
+      ? css`
+          background-color: #fff;
+          color: #2a2a2a;
+        `
+      : css`
+          background-color: #2a2a2a;
+          color: #fff;
+        `}
 
   @media (max-width: 800px) {
     display: none;
