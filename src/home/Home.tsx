@@ -35,7 +35,7 @@ const Home: React.FC = () => {
     setLoading(true);
 
     Promise.race([
-      axios.get("https://swapi.dev/api/people/1"),
+      axios.get("https://swapi.dev/api/people/2"),
       axios.get("https://swapi.dev/api/people/4"),
     ])
       .then((response) => {

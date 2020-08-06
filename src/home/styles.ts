@@ -44,7 +44,7 @@ export const Side = styled.div<Path>`
   display: flex;
   flex: 1;
   background-color: ${(props) =>
-    props.path === "dark" ? "#2a2a2a" : "yellow"};
+    props.path === "dark" ? "#2a2a2a" : "#FBFE63"};
   color: ${(props) => (props.path === "dark" ? "#fff" : "#2a2a2a")};
   flex-direction: column;
   justify-content: center;
