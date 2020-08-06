@@ -20,9 +20,13 @@ const avatarSrc = {
     "https://raw.githubusercontent.com/iclinic/challenge-front/master/images-masters/luke-skywalker.png",
 };
 
+interface Character {
+  name: string;
+}
+
 const Home: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<Character | null>(null);
   const [path, setPath] = useState<string | null>(null);
 
   useEffect(() => {
@@ -35,8 +39,8 @@ const Home: React.FC = () => {
     setLoading(true);
 
     Promise.race([
-      axios.get("https://swapi.dev/api/people/1?format=json"),
-      axios.get("https://swapi.dev/api/people/4?format=json"),
+      axios.get("https://swapi.dev/api/people/1/?format=json"),
+      axios.get("https://swapi.dev/api/people/4/?format=json"),
     ])
       .then((response) => {
         setData(response.data);
@@ -54,7 +58,7 @@ const Home: React.FC = () => {
             <MdArrowBack size={36} /> back
           </ButtonBack>
           <ButtonTopChoose disabled={loading} path={path} onClick={handleStart}>
-            choose your path, Padawan
+            choose your path again, Padawan
           </ButtonTopChoose>
           <Avatar src={path === "dark" ? avatarSrc.DARK : avatarSrc.LIGHT} />
           <p>
@@ -65,7 +69,7 @@ const Home: React.FC = () => {
             path={path}
             onClick={handleStart}
           >
-            choose your path, Padawan
+            choose your path again, Padawan
           </ButtonBottomChoose>
         </Side>
       ) : (

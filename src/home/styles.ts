@@ -101,8 +101,6 @@ export const ButtonBottomChoose = styled.button<Path>`
 
   @media (max-width: 800px) {
     display: block;
-    width: 347px;
-    height: 56px;
   }
 `;
 
